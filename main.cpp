@@ -6,7 +6,7 @@ int main(int argc, char *argv[]){
         fprintf(stderr,"usage: %s <文件名> \n",argv[0]);
         exit(0);
     }
-    myFileSystem f ((char *)"diskFile"); // 创建磁盘对象
+    myFileSystem f ((char *)argv[1]); // 创建磁盘对象
     char* cmd[3]; 
 
     //构造满的块，便于后续访问非空数据块
@@ -16,9 +16,9 @@ int main(int argc, char *argv[]){
     };
 
     //处理输入命令行
-    cmd[0]=argv[1];//操作指令
-    cmd[1]=argv[2];//文件名
-    cmd[2]=argv[3];//大小或者块号
+    cmd[0]=argv[2];//操作指令
+    cmd[1]=argv[3];//文件名
+    cmd[2]=argv[4];//大小或者块号
 
     switch (*cmd[0]){
     case 'C':{
