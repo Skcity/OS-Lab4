@@ -96,6 +96,7 @@ int myFileSystem::create_file(char name[8], int size) {
 
     this->disk.write(tmp_buf, 48); // 将inode写回磁盘
     this->disk.flush();
+    cout << "Create Completed" << endl;
     return 1;
 } 
 
